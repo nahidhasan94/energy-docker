@@ -42,4 +42,7 @@ EXPOSE 5683/udp
 
 VOLUME ["/data"]
 
+# changing uid of thingsboard user to 1000 as in KloverCloud all containers starts as uid 1000
+RUN usermod -u 1000 thingsboard
+
 CMD ["/usr/bin/init-tb.sh"]
